@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <script src="main.js" defer></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Jogo da Velha</title>
+    <meta charset="UTF-8">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Velha</title>
 </head>
 <body>
-  <div class="players"></div>
+    <div id="players">
+        <h1>Jogo Da Velha</h1>
+        <form id="player-form">
+            <div class="player-container">
+                <label for="player1">Jogador 1 </label>
+                <input type="text" placeholder="Digite algo..." name="player1" id="player1" class="name-input"/>
+            </div>
+            <div class="player-container">
+                <label for="player2">Jogador 2 </label>
+                <input type="text" placeholder="Digite algo..." name="player2" id="player2" class="name-input"/>
+            </div>
+            <br>
+            <button id="start-btn">Começar</button>
+        </form>
+    </div>
   
-    <div class="table">
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
+    <div id="table">
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+        <button data-cell></button>
+    </div>
+
+    <div id="winner-screen"></div>
 </body>
 </html>
