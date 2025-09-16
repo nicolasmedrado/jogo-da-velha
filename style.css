@@ -7,16 +7,34 @@ body {
     font-family: Arial, sans-serif;
 }
 
+p {
+    font-weight: bold;
+}
+
+div.player-score {
+    display: flex;
+    flex-direction: row;
+}
+
 #players {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
+#score {
+    display: none;
+    justify-content: space-between
+}
+
 #table {
     display: none;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
+}
+
+#game-sreen {
+    display: none;
 }
 
 #winner-screen {
