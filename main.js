@@ -1,4 +1,6 @@
 const startBtn = document.getElementById('start-btn')
+const resetBtn = document.getElementById('reset-table')
+const menuBtn = document.getElementById('reset-game')
 const playerOne = document.getElementById('player1')
 const playerTwo = document.getElementById('player2')
 const playerScreen = document.getElementById('players')
@@ -6,6 +8,8 @@ const gameScreen = document.getElementById('table')
 const winnerScreen = document.getElementById('winner-screen')
 const cells = document.querySelectorAll('[data-cell]')
 let turn = 0
+let playerOneScore = 0
+let playerTwoScore = 0
 const winningSequences = [
     [0, 1, 2],
     [3, 4, 5],
@@ -31,6 +35,14 @@ startBtn.addEventListener('click', (event) => {
     }
 })
 
+resetBtn.addEventListener('click', (ev) => {
+    ev.preventDefault()
+})
+
+menuBtn.addEventListener('click', (ev) => {
+    ev.preventDefault()
+})
+
 function currentPlayer() {
     return turn % 2 === 0 ? 'X' : 'O'
 }
@@ -47,9 +59,8 @@ function checkWinner() {
             playerScreen.style.display = 'none'
             gameScreen.style.display = 'none'
             winnerScreen.style.display = 'flex'
-            const winnerHeader = document.createElement('h1')
+            const winnerHeader = document.getElementById('game-result')
             winnerHeader.textContent = cells[a].textContent + ' venceu!'
-            winnerScreen.appendChild(winnerHeader)
             return
         }
     }
@@ -58,9 +69,8 @@ function checkWinner() {
             playerScreen.style.display = 'none'
             gameScreen.style.display = 'none'
             winnerScreen.style.display = 'flex'
-            const winnerHeader = document.createElement('h1')
+            const winnerHeader = document.getElementById('game-result')
             winnerHeader.textContent = 'Deu velha! :)'
-            winnerScreen.appendChild(winnerHeader)
     }
 
     return null
